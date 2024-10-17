@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Payment</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+</head>
+<body>
+  <header class="header">
+    <h1>Process Payment</h1>
+  </header>
+  <div class="container">
+    <h2 class="mb-4">Process Payment</h2>
+    <form onsubmit="processarPagamento(); return false;">
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method</label>
+        <select class="form-control" id="paymentMethod" required>
+          <option value="">Select</option>
+          <option value="debit">Debit Card</option>
+          <option value="credit">Credit card</option>
+          <option value="pix">Pix</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-success">Confirm Payment</button>
+    </form>
+  </div>
+  <footer class="footer">
+    Made by Henrique Bertini da Cruz for the work on the ASW subject
+  </footer>
+  <script>
+    function processarPagamento() {
+      const paymentMethod = document.getElementById("paymentMethod").value;
+      sessionStorage.setItem("paymentMethod", paymentMethod);
+      window.location.href = "checkin.html";
+    }
+  </script>
+</body>
+
+</html>

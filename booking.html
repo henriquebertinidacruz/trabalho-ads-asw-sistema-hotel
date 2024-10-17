@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Room</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Book Room</h1>
+  </header>
+  <div class="container">
+    <h2 class="mb-4">Book Room</h2>
+    <form onsubmit="reservarQuarto(); return false;">
+      <div class="form-group">
+        <label for="roomType">Room Type</label>
+        <select class="form-control" id="roomType" required>
+          <option value="">Select</option>
+          <option value="Luxury">Luxury</option>
+          <option value="Higher">Higher</option>
+          <option value="Standard">Standard</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="guestName">Guest Name</label>
+        <input type="text" class="form-control" id="guestName" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Continue to Payment</button>
+    </form>
+  </div>
+  <footer class="footer">
+    Made by Henrique Bertini da Cruz for the work on the ASW subject
+  </footer>
+  <script>
+  function reservarQuarto() {
+      const roomType = document.getElementById("roomType").value;
+      const guestName = document.getElementById("guestName").value;
+      sessionStorage.setItem("roomType", roomType);
+      sessionStorage.setItem("guestName", guestName);
+      window.location.href = "payment.html";
+    }
+  </script>
+</body>
+
+</html>

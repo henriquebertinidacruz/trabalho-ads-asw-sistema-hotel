@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Check-In</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/logo.ico" type="image/x-icon">
+</head>
+
+<body>
+  <header class="header">
+    <h1>Confirm Check-In</h1>
+  </header>
+  <div class="container">
+    <h2 class="mb-4">Confirm Check-In</h2>
+    <p class="info-text">Guest Name: <span id="guestName"></span></p>
+    <p class="info-text">Room Type: <span id="roomType"></span></p>
+    <p class="info-text">Payment Method: <span id="paymentMethod"></span></p>
+    <button class="btn btn-info" onclick="confirmarCheckIn()">Confirm Check-In</button>
+  </div>
+  <footer class="footer">
+    Made by Henrique Bertini da Cruz for the work on the ASW subject
+  </footer>
+  <script>
+    window.onload = function () {
+      document.getElementById("guestName").textContent = sessionStorage.getItem("guestName");
+      document.getElementById("roomType").textContent = sessionStorage.getItem("roomType");
+      document.getElementById("paymentMethod").textContent = sessionStorage.getItem("paymentMethod");
+    };
+
+    function confirmarCheckIn() {
+      alert("Check-in confirmed!");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+
+</html>
